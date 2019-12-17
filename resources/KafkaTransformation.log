@@ -1,0 +1,14 @@
+2019-12-17 16:06:51 INFO  ConfigCache:18 - reading configuration.properties file
+2019-12-17 16:07:25 INFO  ConfigCache:18 - reading configuration.properties file
+2019-12-17 16:25:54 INFO  StreamReader:49 - indside streamBuilder
+2019-12-17 16:25:54 INFO  StreamReader:36 - inside getStream
+2019-12-17 16:25:54 INFO  ConfigCache:16 - reading configuration.properties file
+2019-12-17 16:27:12 INFO  StreamReader:49 - indside streamBuilder
+2019-12-17 16:27:12 INFO  ConfigCache:16 - reading configuration.properties file
+2019-12-17 16:27:12 INFO  StreamReader:44 - inside getStream
+2019-12-17 16:33:03 INFO  StreamReader:55 - indside streamBuilder
+2019-12-17 16:33:03 INFO  ConfigCache:16 - reading configuration.properties file
+2019-12-17 16:33:03 INFO  StreamReader:50 - inside getStream
+2019-12-17 16:33:35 INFO  StreamReader:56 - indside streamBuilder
+2019-12-17 16:33:35 INFO  ConfigCache:16 - reading configuration.properties file
+2019-12-17 16:33:35 INFO  StreamReader:51 - inside getStream
