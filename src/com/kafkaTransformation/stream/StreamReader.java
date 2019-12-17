@@ -1,4 +1,5 @@
 package com.kafkaTransformation.stream;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Properties;
 
@@ -21,7 +22,7 @@ public class StreamReader {
 
 	final static Logger LOGGER = Logger.getLogger(StreamReader.class);
 
-	public static Properties getConfig() {
+	public static Properties getConfig() throws FileNotFoundException {
 		Properties props = new Properties();
 		props.put(StreamsConfig.APPLICATION_ID_CONFIG,
 				ConfigCache.getInstance().getProperty(KTConstants.KAFKA_GROUP_ID));
@@ -32,7 +33,7 @@ public class StreamReader {
 		return props;
 	}
 
-	public static StreamsBuilder getStream() {
+	public static StreamsBuilder getStream() throws FileNotFoundException {
 		StreamsBuilder builder = new StreamsBuilder();
 		KStream<String, String> textLines = builder
 				.stream(ConfigCache.getInstance().getProperty(KTConstants.kAFKA_INPUT_TOPIC));
