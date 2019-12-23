@@ -49,7 +49,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.kafkaTransformation.stream.StreamReader</mainClass>
+							<mainClass>com.kafkaTransformation.stream.ContentKafkaStream</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
