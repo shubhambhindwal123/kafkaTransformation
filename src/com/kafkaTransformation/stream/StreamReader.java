@@ -1,3 +1,4 @@
+
 package com.kafkaTransformation.stream;
 
 import java.io.FileNotFoundException;
@@ -27,9 +28,9 @@ public class StreamReader {
 	public static Properties getConfig() throws FileNotFoundException {
 		Properties props = new Properties();
 		props.put(StreamsConfig.APPLICATION_ID_CONFIG,
-				ConfigCache.getInstance().getProperty(KTConstants.KAFKA_GROUP_ID));
+				ConfigCache.getInstance().getProperty(KTConstants.CONSUMER_ID_CONFIG));
 		props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG,
-				ConfigCache.getInstance().getProperty(KTConstants.BOOTSTRAP_SERVERS_CONFIG));
+				ConfigCache.getInstance().getProperty(KTConstants.CONSUMER_BOOTSTRAP_SERVERS));
 		props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
 		props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
 		return props;
@@ -43,7 +44,8 @@ public class StreamReader {
 		textLines.map(
 				(KeyValueMapper<? super String, ? super String, ? extends KeyValue<? extends Object, ? extends Object>>) (
 						k, v) -> {
-					HashMap<String, String> kv = new HashMap<String, String>();
+					System.out.println(v.toString());
+							HashMap<String, String> kv = new HashMap<String, String>();
 					final Pattern p = Pattern.compile("args=.*\"");
 					Matcher m;
 					m = p.matcher(v);

@@ -1,7 +1,6 @@
 package com.kafkaTransformation.util;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -15,20 +14,21 @@ public class ConfigCache {
 
 	private static ConfigCache cache = null;
 
-	private ConfigCache() throws FileNotFoundException {
+	private ConfigCache() {
 		LOGGER.info("reading configuration.properties file");
 		this.getClass().getClassLoader();
 //		InputStream stream = ClassLoader.getSystemResourceAsStream("config.properties");
-		InputStream stream       = new FileInputStream("config.properties");
+		InputStream stream;   
 
 		try {
+			stream = new FileInputStream("config.properties");
 			configProp.load(stream);
 		} catch (IOException e) {
 			LOGGER.info("file not found :-" + e);
 		}
 	}
 
-	public static ConfigCache getInstance() throws FileNotFoundException {
+	public static ConfigCache getInstance() {
 		if (cache == null) {
 			cache = new ConfigCache();
 			return cache;
